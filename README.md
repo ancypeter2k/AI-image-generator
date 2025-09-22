@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# AI Image Generator App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based AI Image Generator application that allows users to generate images from text prompts using the Hugging Face Inference API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+*   **Text-to-Image Generation**: Input a text prompt and generate a corresponding image.
+*   **Hugging Face Integration**: Utilizes the Hugging Face Inference API for AI image generation.
+*   **Secure API Key Management**: Uses `.env` file for storing sensitive API keys.
+*   **Dynamic Background**: Interactive animated gradient background.
+*   **Responsive Design**: Input container adjusts to screen size.
+*   **Enhanced UI**: Improved font styling and an interactive generate button.
 
-### `npm start`
+## Setup and Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to get the project up and running on your local machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. Clone the repository
 
-### `npm test`
+```bash
+git clone https://github.com/ancypeter2k/AI-image-generator.git
+cd image-generator-ai
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Install Dependencies
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Environment Variables
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Create a `.env` file in the root directory of your project (same level as `package.json`) and add your Hugging Face API token and model name:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```env
+REACT_APP_HF_API_TOKEN=YOUR_HUGGING_FACE_API_KEY
+REACT_APP_HF_MODEL=black-forest-labs/FLUX.1-dev
+```
 
-### `npm run eject`
+Replace `YOUR_HUGGING_FACE_API_KEY` with your actual API token obtained from Hugging Face.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 4. Run the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The application will typically run on `http://localhost:3000`. If port 3000 is already in use, you will be prompted to run it on a different port.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1.  Enter a descriptive text prompt into the input field.
+2.  Click the "Generate Image" button.
+3.  The generated image will be displayed on the screen.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*   `public/`: Contains public assets like `index.html` and `manifest.json`.
+*   `src/`: Contains the main React application code.
+    *   `src/App.js`: Main application component.
+    *   `src/Components/ImageGenerator/ImageGenerator.jsx`: Core component for image generation logic and UI.
+    *   `src/Components/ImageGenerator/ImageGenerator.css`: Styling for the image generator component.
 
-### Code Splitting
+## Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+*   React
+*   Hugging Face Inference API
+*   CSS3 (Animations, Flexbox)
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to fork the repository, open issues, or submit pull requests.
