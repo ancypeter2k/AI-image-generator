@@ -40,6 +40,22 @@ function ImageGenerator() {
     }
   };
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = 'generated_image.png'; // Suggest a default name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleReset = () => {
+    setImageUrl("/");
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+  };
+
   return (
     <div className="image-generator">
       <h2>AI Image Generator</h2>
@@ -61,6 +77,16 @@ function ImageGenerator() {
         <button className="generate-button" onClick={imageGenerator}>
           {loading ? "Generating..." : "Generate Image"}
         </button>
+        {imageUrl !== "/" && !loading && (
+          <button className="download-button" onClick={handleDownload}>
+            Download Image
+          </button>
+        )}
+        {imageUrl !== "/" && !loading && (
+          <button className="reset-button" onClick={handleReset}>
+            Reset
+          </button>
+        )}
       </div>
     </div>
   );
